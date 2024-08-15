@@ -14,19 +14,14 @@ const fileDb = {
       data = []
     }
   },
-  async getMessages(queryDate?: string) {
-    if (queryDate) {
-      return data.filter((message) => Date.parse(message.dateTime) > Date.parse(queryDate))
-    }
-    const lastMessage = data.sort((firstDate, secondDate) => Date.parse(secondDate.dateTime) - Date.parse(firstDate.dateTime));
-    return lastMessage.slice(0, 30);
+  async getMessages () {
+    return data;
   },
 
   async addMessages(item: MessageMutation) {
     const message: Message = {
       id: crypto.randomUUID().toString(),
       ...item,
-      dateTime: new Date().toISOString(),
     };
     data.push(message);
     await this.save();

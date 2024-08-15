@@ -16,9 +16,9 @@ app.use('/messages', messageRouter);
 
 const run = async () => {
   await fileDb.init();
+  app.listen(port, () => {
+    console.log('Listening on port', port);
+  })
 }
 
-
-app.listen(port, () => {
-  console.log('Listening on port', port);
-})
+void run();
