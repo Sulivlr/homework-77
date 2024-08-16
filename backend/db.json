@@ -1,43 +1,32 @@
 [
   {
-    "id": "b0136995-bda1-41d8-bed7-8632583bc762",
-    "author": "JS enthusiast",
-    "message": "Privet, chetverg 15th aug 12:28",
-    "image": "kartinka"
+    "id": "199e9951-bfd0-4e93-8cc9-a54f52b32c59",
+    "author": "kasjda;dlksada",
+    "message": "mikelelelelelluuu",
+    "image": "images/3a6d2e67-50d3-4d90-8e3c-23e81cfc3c27.png"
   },
   {
-    "id": "a27262a7-54af-430e-a942-17de4d0b903a",
-    "author": "JS enthusiast",
-    "message": "Privet, chetverg 15th aug 12:28"
-  },
-  {
-    "id": "d8d1c72b-c637-4ea9-b20d-51495692c574",
-    "author": "JS enthusiast",
-    "message": "Privet, chetverg 15th aug 12:30",
-    "image": "kartinka"
-  },
-  {
-    "id": "46105b9e-fbde-4b54-b91a-ee20fefe0627",
-    "author": "JS enthusiast",
-    "message": "today is very sunny day",
-    "image": "kartinka"
-  },
-  {
-    "id": "055796bb-c6e5-4b69-a8ad-df86f01421ac",
-    "author": "JS enthusiast",
-    "message": "today is very sunny day",
-    "image": "file kakoi-to"
-  },
-  {
-    "id": "dcc7be57-ccbd-4b59-93c2-af1c53590453",
-    "author": "JS enthusiast",
-    "message": "today is very rainy day",
-    "image": "file kakoi-to"
-  },
-  {
-    "id": "11494f7e-5026-47c2-ab75-369ed02a8e32",
+    "id": "1e1a47bb-6631-4b36-b5fd-0c7bc0ecee12",
     "author": "Sultan",
-    "message": "today is very a,sdmasdasd day",
-    "image": "file ewe kakoi-to"
+    "message": "Today is very sunny day i think",
+    "image": "images/783b5809-d6fa-41c5-8018-f06174737383.png"
+  },
+  {
+    "id": "8119688d-7880-490f-b4d0-448a69445449",
+    "author": "Suli",
+    "message": "Today is very shinee day",
+    "image": "images/465cf110-818a-41d6-ba5d-43a43cf33f79.png"
+  },
+  {
+    "id": "7e915a4b-9af6-4cd3-8603-e72ad0a7cfdd",
+    "author": "Timur",
+    "message": "Privet snova",
+    "image": "images/9c01374f-8c84-4cef-a74f-56babea508e3.png"
+  },
+  {
+    "id": "028e6e0f-f447-4449-86e8-7cafbb451451",
+    "author": "test111",
+    "message": "test",
+    "image": "images/b753f6a0-6173-43b3-91e1-82a5e79820fe.png"
   }
 ]

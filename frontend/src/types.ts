@@ -2,11 +2,11 @@ export interface Message {
   id: string;
   author: string;
   message: string;
-  image: string;
+  image: string | null;
 }
 
 export interface MessageMutation {
   author: string;
   message: string;
-  image: string;
+  image: File | null;
 }

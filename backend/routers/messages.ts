@@ -1,6 +1,7 @@
 import express from "express";
 import fileDb from '../fileDb';
 import {MessageMutation} from '../types';
+import {imagesUpload} from '../multer';
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ router.get("/", async (req, res) => {
   res.send(message);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", imagesUpload.single('images'), async (req, res) => {
   if (!req.body.message) {
     return res.status(400).send({"error": "leave a message"});
   }
@@ -17,7 +18,7 @@ router.post("/", async (req, res) => {
   const messageMutation:  MessageMutation = {
     author: req.body.author,
     message: req.body.message,
-    image: req.body.image,
+    image: req.file ? req.file.filename : null,
   }
   const message = await fileDb.addMessages(messageMutation);
   return res.send(message);

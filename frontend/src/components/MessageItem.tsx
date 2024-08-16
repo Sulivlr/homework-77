@@ -1,22 +1,30 @@
 import React from "react";
-import {Card, CardContent, CardHeader, Grid} from "@mui/material";
+import {Card, CardContent, CardHeader, CardMedia, Grid} from "@mui/material";
 
 interface Props {
-    author?: string;
+    author: string;
     message: string;
-    image?: string;
+    image: string | null;
 }
 
 const MessageItem: React.FC<Props> = ({author, message, image}) => {
+    const imageUrl = image ? `http://localhost:8000/${image}` : null;
+
     return (
-        <Grid item xs lg={12}>
-            <Card>
+        <Grid item sx={{width: '300px'}}>
+            <Card sx={{height: '100%'}}>
                 <CardHeader title={`Author: ${author}`} />
+                {imageUrl && (
+                    <CardMedia
+                        title={author}
+                        sx={{height: 0, paddingTop: '56%'}}
+                        image={imageUrl}
+                    />
+                )}
                 <CardContent>
                     <strong>Message: </strong>
                     <i>{message}</i>
                 </CardContent>
-                <CardContent>{image}</CardContent>
             </Card>
         </Grid>
     );

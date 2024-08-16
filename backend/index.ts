@@ -19,6 +19,6 @@ const run = async () => {
   app.listen(port, () => {
     console.log('Listening on port', port);
   })
-}
+};
 
 void run();

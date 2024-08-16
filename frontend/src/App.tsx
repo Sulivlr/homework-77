@@ -1,6 +1,7 @@
 import {Container} from "@mui/material";
 import GuestBar from "./UI/AppBar/GuestBar";
 import Messages from "./features/Messages";
+import NewMessage from "./components/NewMessage";
 
 const App = () => {
     return (
@@ -10,7 +11,7 @@ const App = () => {
             </header>
             <main>
                 <Container maxWidth="xl">
-                    <h1>Messages Form</h1>
+                    <NewMessage />
                     <Messages/>
                 </Container>
             </main>

@@ -25,7 +25,12 @@ const Messages = () => {
             </Grid>
             <Grid item container gap={3}>
                 {messages.map(message => (
-                    <MessageItem key={message.id} author={message.author} message={message.message} image={message.image} />
+                    <MessageItem
+                        key={message.id}
+                        author={message.author}
+                        message={message.message}
+                        image={message.image}
+                    />
                 ))}
             </Grid>
         </Grid>
