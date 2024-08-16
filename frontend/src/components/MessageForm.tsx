@@ -13,7 +13,7 @@ interface MessageFormProps {
     isLoading: boolean;
 }
 
-const MessageForm: React.FC<MessageFormProps> = ({onSubmit, isLoading}) => {
+const MessageForm: React.FC<MessageFormProps> = ({onSubmit}) => {
 
 const dispatch = useAppDispatch();
     const [state, setState] = useState<MessageMutation>({
@@ -25,8 +25,8 @@ const dispatch = useAppDispatch();
     const formSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         await dispatch(createMessage(state));
-        onSubmit({...state});
         dispatch(fetchMessages());
+        onSubmit({...state});
     };
 
     const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +82,7 @@ const dispatch = useAppDispatch();
                     />
                 </Grid>
                 <Grid item>
-                    <LoadingButton type="submit" loading={isLoading} loadingPosition="start" startIcon={<SaveIcon />} variant="contained">
+                    <LoadingButton type="submit" loadingPosition="start" startIcon={<SaveIcon />} variant="contained">
                         Save
                     </LoadingButton>
                 </Grid>
