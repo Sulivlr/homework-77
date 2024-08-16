@@ -11,7 +11,7 @@ const StyledLink = styled(Link)({
 
 
 
-const GuestBook = () => {
+const GuestBar = () => {
   return (
     <AppBar color="info" position="sticky" sx={{mb: 2}} >
       <Toolbar sx={{ justifyContent: 'center' }}>
@@ -23,4 +23,4 @@ const GuestBook = () => {
   );
 };
 
-export default GuestBook;
+export default GuestBar;

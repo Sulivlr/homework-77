@@ -1,17 +1,18 @@
 import {Container} from "@mui/material";
-import GuestBook from "./UI/AppBar/GuestBook";
+import GuestBar from "./UI/AppBar/GuestBar";
+import Messages from "./features/Messages";
 
 const App = () => {
     return (
         <>
             <header>
-                <Container>
-                    <GuestBook />
-                </Container>
+                <GuestBar/>
             </header>
             <main>
-                <h1>Messages Form</h1>
-                <h2>Messages</h2>
+                <Container maxWidth="xl">
+                    <h1>Messages Form</h1>
+                    <Messages/>
+                </Container>
             </main>
         </>
     );
