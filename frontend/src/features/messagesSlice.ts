@@ -40,11 +40,13 @@ export const messagesSlice = createSlice({
     selectors: {
         selectMessages: (state) => state.items,
         selectFetching: (state) => state.fetchLoading,
+        selectCreating: (state) => state.createLoading,
     }
 });
 
 
 export const messagesReducer = messagesSlice.reducer;
 export const {selectMessages,
-    selectFetching
+    selectFetching,
+    selectCreating
 } = messagesSlice.selectors;

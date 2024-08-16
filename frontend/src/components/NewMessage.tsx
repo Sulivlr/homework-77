@@ -1,12 +1,13 @@
-import {useAppDispatch} from '../app/hooks';
+import {useAppDispatch, useAppSelector} from '../app/hooks';
 import {MessageMutation} from '../types';
 import {createMessage} from '../features/messagesThunk';
 import {Typography} from '@mui/material';
 import MessageForm from './MessageForm';
+import {selectCreating} from "../features/messagesSlice";
 
 const NewMessage = () => {
   const dispatch = useAppDispatch();
-
+  const isCreating = useAppSelector(selectCreating);
   const onFormSubmit = async (msgMutation: MessageMutation) => {
     await dispatch(createMessage(msgMutation));
   };
@@ -14,7 +15,7 @@ const NewMessage = () => {
   return (
     <>
       <Typography sx={{mb: 2}}  variant="h5">New Message</Typography>
-      <MessageForm onSubmit={onFormSubmit} />
+      <MessageForm onSubmit={onFormSubmit} isLoading={isCreating}/>
     </>
   );
 };

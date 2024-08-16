@@ -1,23 +1,25 @@
 import {Grid, Typography} from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../app/hooks";
-import {selectMessages} from "./messagesSlice";
+import {selectFetching, selectMessages} from "./messagesSlice";
 import {useEffect} from "react";
 import {fetchMessages} from "./messagesThunk";
 import MessageItem from "../components/MessageItem";
+import Spinner from "../components/Spinner/Spinner";
 
 const Messages = () => {
 
     const dispatch = useAppDispatch();
     const messages = useAppSelector(selectMessages);
+    const fetchLoading = useAppSelector(selectFetching);
 
     useEffect(() => {
         dispatch(fetchMessages());
     }, [dispatch]);
 
-    return (
+    return fetchLoading ? <Spinner /> : (
         <Grid container direction="column" gap={3}>
             <Grid item container>
-                <Grid item>
+                <Grid item sx={{mt: 2}}>
                     <Typography variant="h4">
                         Messages
                     </Typography>

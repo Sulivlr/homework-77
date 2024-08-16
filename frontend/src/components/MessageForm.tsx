@@ -1,24 +1,32 @@
 import React, {useState} from 'react';
 import {MessageMutation} from '../types';
-import {Button, Grid, TextField} from '@mui/material';
+import {Grid, TextField} from '@mui/material';
 import FileInput from "../UI/FileInput/FileInput";
+import {LoadingButton} from "@mui/lab";
+import SaveIcon from '@mui/icons-material/SaveAs';
+import {useAppDispatch} from "../app/hooks";
+import {createMessage, fetchMessages} from "../features/messagesThunk";
+
 
 interface MessageFormProps {
     onSubmit: (mutation: MessageMutation) => void;
+    isLoading: boolean;
 }
 
-const MessageForm: React.FC<MessageFormProps> = ({onSubmit}) => {
+const MessageForm: React.FC<MessageFormProps> = ({onSubmit, isLoading}) => {
 
-
+const dispatch = useAppDispatch();
     const [state, setState] = useState<MessageMutation>({
         message: '',
         author: '',
         image: null
     });
 
-    const formSubmit = (event: React.FormEvent) => {
+    const formSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
+        await dispatch(createMessage(state));
         onSubmit({...state});
+        dispatch(fetchMessages());
     };
 
     const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +82,9 @@ const MessageForm: React.FC<MessageFormProps> = ({onSubmit}) => {
                     />
                 </Grid>
                 <Grid item>
-                    <Button sx={{mb: 3}} type="submit" color="info" variant="contained">Save</Button>
+                    <LoadingButton type="submit" loading={isLoading} loadingPosition="start" startIcon={<SaveIcon />} variant="contained">
+                        Save
+                    </LoadingButton>
                 </Grid>
             </Grid>
         </form>
